@@ -1,9 +1,8 @@
-#include <GL/glut.h>///¨Ï¥ÎGLUT¥~±¾
-#include <stdio.h>
+#include <GL/glut.h>///ä½¿ç”¨GLUTå¤–æ›
 
 void display()
-{
-    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);///²MªÅ
+{           ///æ¸…ç©ºé¡è‰²         ///æ¸…ç©º3Dæ·±åº¦
+    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);///æ¸…ç©º
 
     glBegin(GL_TRIANGLES);
         glColor3ub(24,94,151);   glVertex2f((148-150)/150.0,-(29-150)/150.0);
@@ -15,24 +14,17 @@ void display()
         glColor3ub(255,255,255);   glVertex2f((213-150)/150.0,-(146-150)/150.0);
     glEnd();
 
-    glutSwapBuffers();///¥æ´«2­¿ªºbuffers
-}
-
-void mouse(int button,int state,int x,int y)///±±¨î·Æ¹«
-{
-    if(state==GLUT_DOWN)
-    {
-        printf("glVertex2f((%d-150)/150.0,-(%d-150)/150.0)\n",x,y);///¦L¥X·Æ¹«®y¼Ğ
-    }
+    glutSwapBuffers();///äº¤æ›2å€çš„buffers
 }
 
 int main(int argc,char** argv)
 {
-    glutInit(&argc,argv);///GULTªì©l³]©w
-    glutInitDisplayMode(GLUT_DOUBLE|GLUT_DEPTH);///Åã¥Ü¼Ò¦¡
-    glutCreateWindow("´I¤h¤s");///¶}µøµ¡
+    glutInit(&argc,argv);///GULTåˆå§‹è¨­å®š
+                        ///2å€é¡¯ç¤º ///3Dæ·±åº¦
+    glutInitDisplayMode(GLUT_DOUBLE|GLUT_DEPTH);///é¡¯ç¤ºæ¨¡å¼
+    glutCreateWindow("å¯Œå£«å±±");///é–‹è¦–çª—
 
-    glutDisplayFunc(display);///­nÅã¥Üªº¨ç¦¡
-    glutMouseFunc(mouse);///¨Ï¥Î·Æ¹«¨ç¦¡
-    glutMainLoop();///¥D­nªº°j°é
+    glutDisplayFunc(display);///è¦é¡¯ç¤ºçš„å‡½å¼
+
+    glutMainLoop();///ä¸»è¦çš„è¿´åœˆ
 }
