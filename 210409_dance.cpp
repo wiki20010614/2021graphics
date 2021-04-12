@@ -1,0 +1,112 @@
+#include <GL/glut.h>///使用GLUT外掛
+float angle=-90;
+
+void hand()///畫長方形
+{
+    glPushMatrix();
+        glScalef(0.2,0.1,0.1);
+        glColor3f(0,0,1);
+        glutSolidCube(1);
+    glPopMatrix();
+}
+void sph()///畫橢圓形
+{
+    glPushMatrix();
+        glScalef(0.2,0.1,0.1);
+        glColor3f(0,0.5,1);
+        glutSolidSphere(0.5,100,100);
+    glPopMatrix();
+}
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);///清空
+    glPushMatrix();///身體
+        glScalef(0.2,1,0.1);
+        glColor3f(0,0.5,1);
+        glutSolidCube(1);
+    glPopMatrix();
+    glPushMatrix();///頭
+        glTranslatef(0,0.5,0);///移動物體
+        glScalef(0.5,0.5,0.1);
+        glColor3f(0,1,1);
+        glutSolidSphere(0.5,100,100);
+    glPopMatrix();
+    glPushMatrix();///左腳
+        glTranslatef(-0.35,-0.65,0);///移動物體
+        glRotatef(35,0,0,1);
+        glScalef(0.7,0.1,0.1);
+        glColor3f(0,0,1);
+        glutSolidCube(1);
+    glPopMatrix();
+    glPushMatrix();///右腳
+        glTranslatef(0.35,-0.65,0);///移動物體
+        glRotatef(-35,0,0,1);
+        glScalef(0.7,0.1,0.1);
+        glColor3f(0,0,1);
+        glutSolidCube(1);
+    glPopMatrix();
+    ///左手
+    glPushMatrix();///備份矩陣
+        glTranslatef(-0.1,0,0);///移動物體
+        glRotatef(angle,0,0,1);
+        glTranslatef(-0.1,0,0);///移動中心點
+        hand();///會動的長方形
+        glPushMatrix();///備份矩陣
+            glTranslatef(-0.1,0,0);///移動物體
+            glRotatef(-angle,0,0,1);
+            glTranslatef(-0.1,0,0);///移動中心點
+            sph();///會動的橢圓形
+            glPushMatrix();///備份矩陣
+                glTranslatef(-0.1,0,0);///移動物體
+                glRotatef(angle,0,0,1);
+                glTranslatef(-0.1,0,0);///移動中心點
+                hand();///會動的長方形
+                glPushMatrix();///備份矩陣
+                    glTranslatef(-0.1,0,0);///移動物體
+                    glRotatef(-angle,0,0,1);
+                    glTranslatef(-0.1,0,0);///移動中心點
+                    sph();///會動的橢圓形
+                glPopMatrix();///還原矩陣
+            glPopMatrix();///還原矩陣
+        glPopMatrix();///還原矩陣
+    glPopMatrix();///還原矩陣
+    ///右手
+    glPushMatrix();///備份矩陣
+        glTranslatef(0.1,0,0);///移動物體
+        glRotatef(-angle,0,0,1);
+        glTranslatef(0.1,0,0);///移動中心點
+        hand();///會動的長方形
+        glPushMatrix();///備份矩陣
+            glTranslatef(0.1,0,0);///移動物體
+            glRotatef(angle,0,0,1);
+            glTranslatef(0.1,0,0);///移動中心點
+            sph();///會動的橢圓形
+            glPushMatrix();///備份矩陣
+                glTranslatef(0.1,0,0);///移動物體
+                glRotatef(-angle,0,0,1);
+                glTranslatef(0.1,0,0);///移動中心點
+                hand();///會動的長方形
+                glPushMatrix();///備份矩陣
+                    glTranslatef(0.1,0,0);///移動物體
+                    glRotatef(angle,0,0,1);
+                    glTranslatef(0.1,0,0);///移動中心點
+                    sph();///會動的橢圓形
+                glPopMatrix();///還原矩陣
+            glPopMatrix();///還原矩陣
+        glPopMatrix();///還原矩陣
+    glPopMatrix();///還原矩陣
+    glutSwapBuffers();///交換2倍的buffers
+    angle+=0.3;///增加角度
+    if(angle>=90)angle=-90;
+}
+
+int main(int argc,char** argv)
+{
+    glutInit(&argc,argv);///GULT初始設定
+    glutInitDisplayMode(GLUT_DOUBLE|GLUT_DEPTH);///顯示模式
+    glutCreateWindow("Dance");///開視窗
+
+    glutIdleFunc(display);///重整畫面
+    glutDisplayFunc(display);///要顯示的函式
+    glutMainLoop();///主要的迴圈
+}
