@@ -1,6 +1,6 @@
 #include <windows.h>
 #include <GL/glut.h>
-#include "CMP3_MCI.h"///¤Ş¥ÎCMP3_MCI.h
+#include "CMP3_MCI.h"///å¼•ç”¨CMP3_MCI.h
 CMP3_MCI mp3;
 
 void display()
@@ -10,19 +10,19 @@ void display()
     glutSwapBuffers();
 }
 void keyboard(unsigned char key,int x,int y)
-{///«ö¤UÁä½L§Y¥i¼½©ñÁn­µ(wavÀÉ)
+{///æŒ‰ä¸‹éµç›¤å³å¯æ’­æ”¾è²éŸ³(wavæª”)
     if(key=='1') PlaySound("do.wav",NULL,SND_ASYNC);
     if(key=='2') PlaySound("re.wav",NULL,SND_ASYNC);
     if(key=='3') PlaySound("mi.wav",NULL,SND_ASYNC);
 }
 void mouse(int button,int state,int x,int y)
-{///«ö¤U·Æ¹«§Y¥i¼½©ñÁn­µ(wavÀÉ)
+{///æŒ‰ä¸‹æ»‘é¼ å³å¯æ’­æ”¾è²éŸ³(wavæª”)
     if(state==GLUT_DOWN) PlaySound("shot.wav",NULL,SND_ASYNC);
 }
 int main(int argc, char** argv)
 {
-    mp3.Load("music.mp3");///¸ü¤Jmp3ÀÉ
-    mp3.Play();///¼½©ñmp3ÀÉ
+    mp3.Load("music.mp3");///è¼‰å…¥mp3æª”
+    mp3.Play();///æ’­æ”¾mp3æª”
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH);
     glutCreateWindow("week10 sound");
