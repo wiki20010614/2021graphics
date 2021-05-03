@@ -703,7 +703,3 @@ int main(int argc, char** argv)
     glutMainLoop();
 }
 ```
-
-Week11-3
-------
-```C++
