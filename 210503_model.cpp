@@ -1,10 +1,10 @@
-#include "glm.h"///¨Ï¥Îglm.cppªº¥~±¾
-GLMmodel* pmodel=NULL;///pmodel«ü¼Ğ
+#include "glm.h"///ä½¿ç”¨glm.cppçš„å¤–æ›
+GLMmodel* pmodel=NULL;///pmodelæŒ‡æ¨™
 
 void drawmodel(void)
-{///¨Ï¥Î½d¨Òµ{¦¡
+{///ä½¿ç”¨ç¯„ä¾‹ç¨‹å¼
     if (!pmodel) {
-        pmodel=glmReadOBJ("data/dolphins.obj");///dolphins¼Ò«¬
+        pmodel=glmReadOBJ("data/dolphins.obj");///dolphinsæ¨¡å‹
         if(!pmodel) exit(0);
         glmUnitize(pmodel);
         glmFacetNormals(pmodel);
@@ -17,7 +17,7 @@ void drawmodel(void)
 void display()
 {
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-    drawmodel();///¨Ï¥Î½d¨Òµ{¦¡
+    drawmodel();///ä½¿ç”¨ç¯„ä¾‹ç¨‹å¼
     glutSwapBuffers();
 }
 
