@@ -924,15 +924,15 @@ int myTexture(char * filename)
     return id;
 }
 
-float angle=0;  ///設定初始角度為0
+float angle=0;///初始角度=0
 
 void display()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     glBindTexture(GL_TEXTURE_2D, id1);
-    glPushMatrix();   ///開始畫鋼彈
-        glRotatef(angle,0,1,0);   ///軸心旋轉
+    glPushMatrix();///畫鋼彈
+        glRotatef(angle,0,1,0);///軸心旋轉
         drawmodel();
     glPopMatrix();
 
@@ -944,7 +944,7 @@ void display()
         glTexCoord2f( 1, 0 ); glVertex3f( +1, +1 ,0.8);
     glEnd();
     glutSwapBuffers();
-    angle++;   ///角度不斷增加
+    angle++;///增加角度
 }
 int main(int argc, char** argv)
 {
@@ -952,11 +952,12 @@ int main(int argc, char** argv)
     glutInitDisplayMode( GLUT_DOUBLE | GLUT_DEPTH );
     glutCreateWindow("week13 texture");
     glutDisplayFunc(display);
-    glutIdleFunc(display);   ///有空就畫並++
+    glutIdleFunc(display);
 
     id1 = myTexture("Diffuse.jpg");///鋼彈貼圖
     id2 = myTexture("shin.png");///背景
     glEnable(GL_DEPTH_TEST);
     glutMainLoop();
 }
+
 ```
