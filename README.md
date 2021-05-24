@@ -1,6 +1,6 @@
 # 2021電腦圖學
 
-Week03
+Week03(210308)
 ======
 
 Week03-1
@@ -105,7 +105,7 @@ int main(int argc,char** argv)
 }
 ```
 
-Week04
+Week04(210315)
 ======
 
 Week04-1
@@ -189,7 +189,7 @@ int main(int argc,char** argv)
 }
 ```
 
-Week05
+Week05(210322)
 ======
 
 Week05-1
@@ -241,7 +241,7 @@ int main(int argc,char** argv)
 }
 ```
 
-Week06
+Week06(210329)
 ======
 
 Week06-1
@@ -360,7 +360,7 @@ int main(int argc,char** argv)
 }
 ```
 
-Week08
+Week08(210412)
 ======
 
 Week08-1
@@ -501,7 +501,7 @@ int main(int argc, char** argv)
 }
 ```
 
-Week10
+Week10(210426)
 ======
 
 Week10-1
@@ -594,7 +594,7 @@ int main(int argc, char** argv)
 }
 ```
 
-Week11
+Week11(210503)
 ======
 
 Week11-1
@@ -704,7 +704,7 @@ int main(int argc, char** argv)
 }
 ```
 
-Week12
+Week12(210510)
 ======
 
 Week12-1
@@ -759,7 +759,7 @@ int main(int argc, char** argv)
 }
 ```
 
-Week13
+Week13(210517)
 ======
 
 Week13-1
@@ -961,7 +961,7 @@ int main(int argc, char** argv)
 }
 ```
 
-Week14
+Week14(210524)
 ======
 
 Week14-1
